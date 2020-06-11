@@ -19,7 +19,7 @@ class Warrior(Character):
     def __init__(self, name, position):
         super().__init__(name, position)
         self.health = 100
-        self.defense = 5
+        self.defense = 10
         self.attack = 40
 
     def potion(self, char):
@@ -31,18 +31,38 @@ class Healer(Character):
     def __init__(self, name, position):
         super().__init__(name, position)
         self.health = 75
-        self.defense = 0
+        self.defense = 5
         self.attack = 20
 
     def heal(self, char):
         char.health += 75
 
 
+class Mob(Character):
+    def __init__(self, name, position):
+        super().__init__(name, position)
+        self.health = 100
+        self.defense = 5
+        self.attack = 5
+
 class Enemy(Character):
     def __init__(self, name, position):
         super().__init__(name, position)
         self.health = 150
-        self.defense = 20
-        self.attack = 30
+        self.defense = 10
+        self.attack = 10
 
+class Semi_Boss(Character):
+    def __init__(self, name, position):
+        super().__init__(name, position)
+        self.health = 200
+        self.defense = 15
+        self.attack = 10
+
+class Boss(Character):
+    def __init__(self, name, position):
+        super().__init__(name, position)
+        self.health = 300
+        self.defense = 20
+        self.attack = 10
 

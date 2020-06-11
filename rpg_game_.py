@@ -1,21 +1,28 @@
 import board
-from game_stats import Knight, Warrior, Healer, Enemy
-knight = Knight("Kevin", {"x":10,"y":100})
-warrior = Warrior("Jim", {"x":10,"y":100})
-healer = Healer("Pam", {"x":10,"y":100})
-enemy = Enemy("Dwight", {"x":10, "y":100})
-enemy2 = Enemy("Michael", {"x":10, "y":100})
+from game_stats import Knight, Warrior, Healer, Mob, Enemy, Semi_Boss, Boss
+knight = Knight("Kevin", {"x":1,"y":2})
+warrior = Warrior("Jim", {"x":1,"y":2})
+healer = Healer("Pam", {"x":1,"y":2})
+mob = Mob("Andy", {"x":1,"y":2})
+enemy = Enemy("Stanley", {"x":1,"y":2})
+small_boss = Semi_Boss("Dwight", {"x":1,"y":2})
+boss = Boss("Michael", {"x":1,"y":2})
 
-
-# while enemy.health >= 130:
-#     warrior.hit(enemy)
-#     print(enemy.health)
-
-# healer.heal(knight)
-# print(knight.health)
 
 game_board = board.gen_board(6,6)
 print(game_board)
+
+
+nextStep = False
+
+# while(nextStep == False):
+#     print("Choose a character: 1. Warrior")
+#     try:
+#         char_input = int(input())
+#         if != 1 
+#     except ValueError:
+#         print("You chose an invalid character.")
+
 print("\n\n\n============================")
 print("%s has encountered %s!" % (warrior.name, enemy.name))
 print("============================")
@@ -48,3 +55,19 @@ while enemy.health > 0 and warrior.health > 0:
             print("%s does %d damage to %s." % (enemy.name, enemy.attack, warrior.name))
             if warrior.health <= 0:
                 print("\nYou are dead.\n")
+
+
+
+
+
+
+
+
+
+#####
+# while enemy.health >= 130:
+#     warrior.hit(enemy)
+#     print(enemy.health)
+
+# healer.heal(knight)
+# print(knight.health)
