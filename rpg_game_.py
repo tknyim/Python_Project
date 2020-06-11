@@ -16,7 +16,9 @@ enemy2 = Enemy("Michael", {"x":10, "y":100})
 
 game_board = board.gen_board(6,6)
 print(game_board)
-print("\n\n\n<{%s has encountered %s!}>" % (warrior.name, enemy.name))
+print("\n\n\n============================")
+print("%s has encountered %s!" % (warrior.name, enemy.name))
+print("============================")
 while enemy.health > 0 and warrior.health > 0:
         print("\nYou:\n HP: %d // ATK: %d \n" % (warrior.health, warrior.attack))
         print("Goblin:\n HP:%d // ATK: %d " % (enemy.health, enemy.attack))
@@ -31,12 +33,12 @@ while enemy.health > 0 and warrior.health > 0:
             warrior.hit(enemy)
             print("\n%s did %d damage to %s." % (warrior.name, warrior.attack, enemy.name))
             if enemy.health <= 0:
-                print("\n<{You have won!}>\n")
+                print("\nYou have won!\n")
         elif user_input == "2":
             hp_msg = warrior.potion(warrior)
-            print("\n %s drank a potion and recovered %s health." % (warrior.name,hp_msg))
+            print("\n%s drank a potion and recovered %s health." % (warrior.name,hp_msg))
         elif user_input == "3":
-            print("\n<{You ran away safely.}>")
+            print("\nYou ran away safely.")
             break
         else:
             print("Invalid input %r" % user_input)
@@ -45,4 +47,4 @@ while enemy.health > 0 and warrior.health > 0:
             enemy.hit(warrior)
             print("%s does %d damage to %s." % (enemy.name, enemy.attack, warrior.name))
             if warrior.health <= 0:
-                print("\n<{You are dead.}>\n")
+                print("\nYou are dead.\n")

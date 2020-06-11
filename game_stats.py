@@ -23,8 +23,8 @@ class Warrior(Character):
         self.attack = 40
 
     def potion(self, char):
-        char.health += 25
-        return "25"
+        char.health += 35
+        return "35"
 
 
 class Healer(Character):
