@@ -4,7 +4,7 @@ class Character():
         self.position = position
 
     def hit(self, char):
-        char.health -= self.attack
+        char.health -= (self.attack - self.defense)
 
 
 class Knight(Character):

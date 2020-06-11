@@ -20,8 +20,8 @@ print("\n\n\n============================")
 print("%s has encountered %s!" % (warrior.name, enemy.name))
 print("============================")
 while enemy.health > 0 and warrior.health > 0:
-        print("\nYou:\n HP: %d // ATK: %d \n" % (warrior.health, warrior.attack))
-        print("Goblin:\n HP:%d // ATK: %d " % (enemy.health, enemy.attack))
+        print("\nYou:\n [HP: %d // ATK: %d // DEF: %d]\n" % (warrior.health, warrior.attack, warrior.defense))
+        print("Goblin:\n [HP: %d // ATK: %d // DEF: %d]" % (enemy.health, enemy.attack, warrior.defense))
         print()
         print("What do you want to do?")
         print("1.) Attack")
@@ -38,7 +38,7 @@ while enemy.health > 0 and warrior.health > 0:
             hp_msg = warrior.potion(warrior)
             print("\n%s drank a potion and recovered %s health." % (warrior.name,hp_msg))
         elif user_input == "3":
-            print("\nYou ran away safely.")
+            print("\nYou ran away safely.\n")
             break
         else:
             print("Invalid input %r" % user_input)
