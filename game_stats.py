@@ -6,6 +6,11 @@ class Character():
     def hit(self, char):
         char.health -= (self.attack - self.defense)
 
+    def potion(self):
+        amount = 30
+        self.health += amount
+        return amount
+
 
 class Knight(Character):
     def __init__(self, name, position):
@@ -13,10 +18,6 @@ class Knight(Character):
         self.health = 200
         self.defense = 5
         self.attack = 25
-
-    def potion(self, char):
-        char.health += 25
-        return "25"
 
 
 class Warrior(Character):
@@ -26,45 +27,29 @@ class Warrior(Character):
         self.defense = 5
         self.attack = 40
 
-    def potion(self, char):
-        char.health += 30
-        return "30"
 
-
-class Healer(Character):
-    def __init__(self, name, position):
-        super().__init__(name, position)
-        self.health = 100
-        self.defense = 5
-        self.attack = 15
-
-    def heal(self, char):
-        char.health += 40
-        return "40"
-
-
-class Mob(Character):
+class Gremlin(Character):
     def __init__(self, name, position):
         super().__init__(name, position)
         self.health = 100
         self.defense = 5
         self.attack = 8
 
-class Enemy(Character):
+class Werewolf(Character):
     def __init__(self, name, position):
         super().__init__(name, position)
         self.health = 150
         self.defense = 10
         self.attack = 10
 
-class Semi_Boss(Character):
+class Chimera(Character):
     def __init__(self, name, position):
         super().__init__(name, position)
         self.health = 200
         self.defense = 15
         self.attack = 12
 
-class Boss(Character):
+class Bahamut(Character):
     def __init__(self, name, position):
         super().__init__(name, position)
         self.health = 300
