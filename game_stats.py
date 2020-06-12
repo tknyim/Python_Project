@@ -25,7 +25,7 @@ class Warrior(Character):
         super().__init__(name, position)
         self.health = 150
         self.defense = 5
-        self.attack = 350
+        self.attack = 35
 
 
 class Gremlin(Character):

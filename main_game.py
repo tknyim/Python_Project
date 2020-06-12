@@ -94,28 +94,3 @@ while gameplay:
             print("\n%s drank a potion and recovered by 30." % player.name)
             player.health -= (enemy.attack - player.defense)
             print("%s does %d damage to %s." % (enemy.name, enemy.attack, player.name))
-
-        
-    
-
-
-
-
-                
-
-
-
-
-
-
-
-
-
-
-#####
-# while enemy.health >= 130:
-#     warrior.hit(enemy)
-#     print(enemy.health)
-
-# healer.heal(knight)
-# print(knight.health)

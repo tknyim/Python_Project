@@ -15,7 +15,6 @@ def versus(main_char, boss):
     elif distance == 0:
         monster = boss
     else:
-        #Troubleshoot for problems
         print("Cannot move in this direction ")
     return monster
 
