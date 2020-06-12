@@ -12,7 +12,7 @@ nextStep = False
 
 player = input("\n\nWhat is your name? \n>> ")
 position = map_size.starting_position(map_size)
-boss = Bahamut("Bahamut" ,position[1])
+boss = Bahamut("Boss",position[1])
 
 while nextStep == False:
     print("\nChoose a character: [ 1. Warrior of Light   2. Dark Knight ]")
@@ -59,7 +59,7 @@ while gameplay:
     direction = True
     
     battle = encounter.enc_probability(player.position, boss.position)
-    enemy = encounter.versus(player.position, boss)
+    enemy = encounter.versus(player.position, boss.position)
     if battle:
         print("You have encountered a(n) %s \n" % enemy.name)
     while battle:
@@ -71,51 +71,22 @@ while gameplay:
             print("\n%s did %d damage to %s." % (player.name, player.attack, enemy.name))
             if enemy.health <= 0:
                 print("\nYou defeated a %s!\n" % enemy.name)
-                battle = False
-                
-                if boss.health <= 0:
+
+            elif battle_move == "2":
+                player.potion(player)
+                print("\n%s drank a potion and recovered %s health." % (player.name, player.potion()))
+
+            else:
+                if enemy.name == boss.name:
                     win = True
                     gameplay = False
-                    print("Congraulations you win! \n")
-                    
+                    print("You win!")
 
-            else: 
+            if enemy.health > 0:
                 player.health -= (enemy.attack - player.defense)
                 print("%s does %d damage to %s." % (enemy.name, enemy.attack, player.name))
-            
-                
             if  player.health <= 0:
                 battle = False
                 gameplay = False
                 print("\nYou are dead.\n")
-
-        elif battle_move == "2":
-            player.health = (player.health + 30)
-            print("\n%s drank a potion and recovered by 30." % player.name)
-            player.health -= (enemy.attack - player.defense)
-            print("%s does %d damage to %s." % (enemy.name, enemy.attack, player.name))
-
-        
     
-
-
-
-
-                
-
-
-
-
-
-
-
-
-
-
-#####
-# while enemy.health >= 130:
-#     warrior.hit(enemy)
-#     print(enemy.health)
-
-# healer.heal(knight)
-# print(knight.health)
