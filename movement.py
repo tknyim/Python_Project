@@ -28,5 +28,3 @@ def move(position, direction):
             position.x += 1
             turn = True
     return turn
-
-
