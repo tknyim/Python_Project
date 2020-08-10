@@ -1,1 +1,1 @@
-# Python_Project
+This was my first project I've made by using Python to build this turn-based dungeon rpg game. This is a 6x6 mapped size game where the player and the boss will be randomly generated as a set coordinate. As the player moves closer or farther from the boss, the probability of encountering a weak to strong monster will vary as well. You can play this with your friends by taking turns and see who can get a better score of having the least amount of steps taken or most points from defeating monsters!
